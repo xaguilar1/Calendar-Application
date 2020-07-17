@@ -1,56 +1,89 @@
-var userText = document.querySelector("description");
-var buttons = document.querySelector("saveBtn");
-var hourTime = document.querySelector("hour");
 
-// variable to store and loop through scheduler
-var myDay = [
-    {
-        hour: "09",
-        time: "09",
-        meridiem: "am",
-        reminder: ""
-    },
-    {
-        hour: "10",
-        time: "10",
-        meridiem: "am",
-        reminder: ""
-    },
-    {
-        hour: "11",
-        time: "11",
-        meridiem: "am",
-        reminder: ""
-    },
-    {
-        hour: "12",
-        time: "12",
-        meridiem: "pm",
-        reminder: ""
-    },
-    {
-        hour: "01",
-        time: "13",
-        meridiem: "pm",
-        reminder: ""
-    },
-    {
-        hour: "02",
-        time: "14",
-        meridiem: "pm",
-        reminder: ""
-    },
+//sets current day and time at the top of the screen 
+
+var dateAndtime = function(){$("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'))}
+setInterval(dateAndtime,1000);
+
+var saveText = ["", "", "", "", "", "","", "", ""];
 
 
-// saves data to be used in localStorage
-$(".saveBtn").on("click", function(event) {
-    event.preventDefault();
-    var saveIndex = $(this).siblings(".description").children(".future").attr("id");
-    myDay[saveIndex].reminder = $(this).siblings(".description").children(".future").val();
-    console.log(saveIndex);
-    saveReminders();
-    displayReminders();
-})
+var currentT = parseInt(moment().format("HH"));
+ 
+console.log(currentT);
+// //function for past present and future color slots 
+
+$("textarea").each (function() {
+    var currentBlock = $(this);
+    var timeOfBlock = parseInt(currentBlock.attr("id"));
+    console.log(timeOfBlock);
+    if (timeOfBlock === currentT) {
+        currentBlock.addClass("present");
+        currentBlock.removeClass("past");
+        currentBlock.removeClass("future");
+        } else if (timeOfBlock < currentT) {
+        currentBlock.addClass("past");
+        currentBlock.removeClass("present")
+        currentBlock.removeClass("future")
+        } else if (timeOfBlock > currentT) {
+            currentBlock.removeClass("past");
+            currentBlock.addClass("future");
+            currentBlock.removeClass("present");
+        }
+
+});
+
+
+//create button clicking saving text in local storage
+
+
+$(".saveBtn").on("click", function() {
+    
+    var hour = $(this).parent().attr("id");
+    console.log(hour);
+
+    var currentText = $(".text" + hour);
+    console.log(currentText.val());
+
+    var arrayIndex = parseInt($(this).attr("data-type"));
+    saveText[arrayIndex] = currentText.val();
+    console.log(saveText);
+
+    localStorage.setItem("setText", JSON.stringify(saveText));
+});
+
+//sets exhisting ls data to the view if exhisting 
+function textToView () {
+
+    var exhistData = JSON.parse(localStorage.getItem("setText"));
+
+    if (exhistData) {
+        saveText = exhistData;
+    }
+
+    textToView();
+}
+
+
+// //displays any data in ls to the view 
+
+// function displayTasks () {
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

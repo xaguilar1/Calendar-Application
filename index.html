@@ -18,7 +18,8 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href=".assets/style.css" />
+    <link rel="shortcut icon" href="./assets /images/cal.ico">
+    <link rel="stylesheet" href="./assets /style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -27,10 +28,6 @@
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
-      <script type="text/javascript">
-      var dateAndtime = function(){$("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'))}
-      setInterval(dateAndtime,1000);
-      </script>
     
       
     </header>
@@ -39,93 +36,112 @@
       <!-- spell check allows use to type whatever -->
 
 
-      <div id="hour-9" class="row time-block past">
+      <div id="9" class="row time-block ">
         <div class= "col-md-1 hour">
           9am
         </div>
-        <textarea class="col-md-10 description" spellcheck="false"></textarea> 
-        <button class="col-md-1 saveBtn">Save</button>
+        <textarea class="col-md-10 description text19" id = "9" placeholder = "Task" spellcheck="false"></textarea> 
+        <button class="col-md-1 saveBtn" data-type = "0" class= "saveBtn-9">
+          <i class='far fa-save fa-lg'></i>
+        </button>
       </div>
 
 
-      <div id="hour-10" class="row time-block past">
+      <div id="10" class="row time-block ">
         <div class= "col-md-1 hour">
           10am
         </div>
-        <textarea class= "col-md-10 description" spellcheck="false"></textarea>
-        <button class="col-md-1 saveBtn">Save</button>
+        <textarea class= "col-md-10 description text10" id = "10" placeholder = "Task" spellcheck="false"></textarea>
+        <button class="col-md-1 saveBtn" data-type = "1" class= "saveBtn-10">
+          <i class='far fa-save fa-lg'></i>
+        </button>
       </div>
 
 
       
-      <div id="hour-11" class="row time-block past">
+      <div id="11" class="row time-block ">
         <div class= "col-md-1 hour">
           11am
         </div>
-        <textarea class= "col-md-10 description" spellcheck="false"></textarea>
-        <button class="col-md-1 saveBtn">Save</button>
+        <textarea class= "col-md-10 description text11" id = "11" placeholder = "Task" spellcheck="false"></textarea>
+        <button class="col-md-1 saveBtn" data-type = "2" class= "saveBtn-11">
+          <i class='far fa-save fa-lg'></i>
+        </button>
       </div>
 
 
       
-      <div id="hour-12" class="row time-block past">
+      <div id="12" class="row time-block ">
         <div class= "col-md-1 hour">
           12pm
         </div>
-        <textarea class= "col-md-10 description" spellcheck="false"></textarea>
-        <button class="col-md-1 saveBtn">Save</button>
+        <textarea class= "col-md-10 description text12" id = "12" placeholder = "Task" spellcheck="false"></textarea>
+        <button class="col-md-1 saveBtn" data-type = "3" class= "saveBtn-12">
+          <i class='far fa-save fa-lg'></i>
+        </button>
       </div>
       
 
-      <div id="hour-13" class="row time-block past">
+      <div id="13" class="row time-block ">
         <div class= "col-md-1 hour">
           1pm
         </div>
-        <textarea class= "col-md-10 description" spellcheck="false"></textarea>
-        <button class="col-md-1 saveBtn">Save</button>
+        <textarea class= "col-md-10 description text13" id = "13" placeholder = "Task" pellcheck="false"></textarea>
+        <button class="col-md-1 saveBtn" data-type = "4" class= "saveBtn-13">
+          <i class='far fa-save fa-lg'></i>
+        </button>
       </div>
      
 
-      <div id="hour-14" class="row time-block past">
+      <div id="14" class="row time-block">
         <div class= "col-md-1 hour">
           2pm
         </div>
-        <textarea class= "col-md-10 description" spellcheck="false"></textarea>
-        <button class="col-md-1 saveBtn">Save</button>
+        <textarea class= "col-md-10 description text14" id = "14" placeholder = "Task" spellcheck="false"></textarea>
+        <button class="col-md-1 saveBtn" data-type = "5" class= "saveBtn-14">
+          <i class='far fa-save fa-lg'></i>
+        </button>
       </div>
       
 
-      <div id="hour-15" class=" row time-block past">
+      <div id="15" class="row time-block">
         <div class= "col-md-1 hour">
           3pm
         </div>
-        <textarea class= "col-md-10 description" spellcheck="false"></textarea>
-        <button class="col-md-1 saveBtn">Save</button>
+        <textarea class= "col-md-10 description text15" id = "15" placeholder = "Task" spellcheck="false"></textarea>
+        <button class="col-md-1 saveBtn" data-type = "6" class= "saveBtn-15">
+          <i class='far fa-save fa-lg'></i>
+        </button>
       </div>
       
       
-      <div id="hour-16" class="row time block present">
+      <div id="16" class="row time block">
         <div class= "col-md-1 hour">
           4pm
         </div>
-        <textarea class= "col-md-10 description" spellcheck="false"></textarea>
-        <button class="col-md-1 saveBtn">Save</button>
+        <textarea class= "col-md-10 description text16" id = "16" placeholder = "Task" spellcheck="false"></textarea>
+        <button class="col-md-1 saveBtn" data-type = "7" class= "saveBtn-16">
+          <i class='far fa-save fa-lg'></i>
+        </button>
       </div>
       
       
-      <div id="hour-17" class="row time block future">
+      <div id="17" class="row time block">
         <div class= "col-md-1 hour">
           5pm
         </div>
-        <textarea class= "col-md-10 description" spellcheck="false"></textarea>
-        <button class="col-md-1 saveBtn">Save</button>
+        <textarea class= "col-md-10 description text17" id = "17" placeholder = "Task" spellcheck="false"></textarea>
+        <button class="col-md-1 saveBtn " data-type = "8" class= "saveBtn-17">
+          <i class='far fa-save fa-lg'></i> 
+        </button>
       </div>
+      
       
     </div>
 
 
-    <script type="text/javascript" src="./assets/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script defer type="text/javascript" src="./assets /script.js"></script>
   </body>
 </html>
